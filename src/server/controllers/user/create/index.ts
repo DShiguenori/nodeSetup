@@ -1,6 +1,7 @@
-import { UserCreateUseCase } from "@modules/user";
-import { UserService } from "@repository/user/user.service";
-import { UserCreateController } from "./user.create.controller";
+import { UserCreateUseCase } from '@modules/user';
+import { UserService } from '@repository/user/user.service';
+
+import { UserCreateController } from './user.create.controller';
 
 const userService = new UserService();
 

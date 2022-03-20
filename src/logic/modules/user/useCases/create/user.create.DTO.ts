@@ -1,5 +1,5 @@
-import { IUser } from "@modules/user/interfaces";
+import { IUser } from '@modules/user/interfaces';
 
 export interface IUserCreateDTO {
-  user: IUser;
+	user: IUser;
 }

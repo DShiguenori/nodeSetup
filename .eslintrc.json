@@ -1,0 +1,76 @@
+{
+	"env": {
+		"es2021": true,
+		"node": true
+	},
+	"extends": ["google", "plugin:@typescript-eslint/recommended", "prettier", "plugin:@foxglove/base"],
+	"plugins": ["@typescript-eslint", "prettier", "max-params-no-constructor", "eslint-plugin-tsdoc"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2021,
+		"sourceType": "module"
+	},
+	"rules": {
+		"no-console": "warn",
+		"no-warning-comments": "warn",
+		"max-params-no-constructor/max-params-no-constructor": ["error", 1],
+		"@typescript-eslint/no-boolean-parameters": "off",
+		"no-plusplus": "off",
+		"import/prefer-default-export": "off",
+		"prettier/prettier": "error",
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never"
+			}
+		],
+		"no-shadow": "off",
+		"no-return-await": "off",
+		"@typescript-eslint/no-shadow": ["error"],
+		"no-useless-constructor": "off",
+		"@typescript-eslint/no-useless-constructor": ["error"],
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": ["error"],
+		"no-param-reassign": ["error", { "props": false }],
+		"no-underscore-dangle": ["error", { "allow": ["_id"] }],
+		"class-methods-use-this": "off",
+		"@typescript-eslint/no-non-null-assertion": "off",
+		"no-await-in-loop": "off",
+		"one-var": "off",
+		"no-restricted-syntax": [
+			"error",
+			{
+				"selector": "ForInStatement",
+				"message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+			},
+			{
+				"selector": "LabeledStatement",
+				"message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+			},
+			{
+				"selector": "WithStatement",
+				"message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+			}
+		],
+		"valid-jsdoc": "off",
+		"tsdoc/syntax": "warn"
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"extends": ["plugin:@foxglove/typescript"],
+			"parserOptions": {
+				"project": "tsconfig.json"
+			},
+			"rules": {
+				"@typescript-eslint/no-explicit-any": "warn"
+			}
+		}
+	]
+}

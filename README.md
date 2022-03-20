@@ -2,7 +2,7 @@
 
 ### Colinha para quando for criar novos projetos em node
 
-- Cria a pasta do projeto. Abre a pasta nova. Chama o VsCode abrindo a pasta.
+-   Cria a pasta do projeto. Abre a pasta nova. Chama o VsCode abrindo a pasta.
 
 ```
 mkdir nome
@@ -10,45 +10,45 @@ cd nome
 code .
 ```
 
-- Inicializa o git
+-   Inicializa o git
 
 ```
 git init
 ```
 
-- Inicializa o npm/yarn
+-   Inicializa o npm/yarn
 
 ```
 npm init -y
 ```
 
-- Instale o typescript e inicialize-o
+-   Instale o typescript e inicialize-o
 
 ```
 npm i typescript
 tsc --init
 ```
 
-- (opcional) Instale o express
+-   (opcional) Instale o express
 
 ```
 npm i express
 npm i -D @types/express
 ```
 
-- Instale um "watcher" que re-executa o projeto quando acontecer uma modificação no código
+-   Instale um "watcher" que re-executa o projeto quando acontecer uma modificação no código
 
 ```
 npm i -D ts-node-dev
 ```
 
-- Atualize o package com o script de inicialização
+-   Atualize o package com o script de inicialização
 
-  -- respawn Reinicia o projeto totalmente, não deixa processos vivos
+    -- respawn Reinicia o projeto totalmente, não deixa processos vivos
 
-  -- transpile-only Faz com que o ts-node-dev não procure erros no código, só executa e deixa mais rápido. Erros de typagem podemos tratar num es-lint
+    -- transpile-only Faz com que o ts-node-dev não procure erros no código, só executa e deixa mais rápido. Erros de typagem podemos tratar num es-lint
 
-  --ignore-watch node_modules Ignora modificações na pasta node_modules
+    --ignore-watch node_modules Ignora modificações na pasta node_modules
 
 ```
 {
@@ -60,40 +60,40 @@ npm i -D ts-node-dev
 }
 ```
 
-- Atualizando o arquivo tsconfig.json
+-   Atualizando o arquivo tsconfig.json
 
-  - target
+    -   target
 
-  - lib
+    -   lib
 
-  - experimentalDecorators
+    -   experimentalDecorators
 
-  - emitDecoratorMetadata
+    -   emitDecoratorMetadata
 
-  - rootDir
+    -   rootDir
 
-  - allowJs
+    -   allowJs
 
-  - removeComments
+    -   removeComments
 
-  - outDir
+    -   outDir
 
-  - esModuleInterop
+    -   esModuleInterop
 
-  - forceConsistentCasingInFileNames
+    -   forceConsistentCasingInFileNames
 
-  - strict Diego coloca false, mas acredito que desligar isso perde muito da funcionalidade do typescript de segurar erros. É mais recomendado para devs avançados.
+    -   strict Diego coloca false, mas acredito que desligar isso perde muito da funcionalidade do typescript de segurar erros. É mais recomendado para devs avançados.
 
-  - skipLibCheck
+    -   skipLibCheck
 
-  - resolveJsonModule
+    -   resolveJsonModule
 
-  - baseUrl
+    -   baseUrl
 
-  - typeRoots
+    -   typeRoots
 
-- Adicione o paths para determinar atalhos para importações.
-- Para ter compatibilidade com o ts-node-dev, instale o tsconfig-paths e atualize o script
+-   Adicione o paths para determinar atalhos para importações.
+-   Para ter compatibilidade com o ts-node-dev, instale o tsconfig-paths e atualize o script
 
 ```
 npm i -D ts-node-dev
@@ -107,4 +107,26 @@ npm i -D ts-node-dev
   },
  ...etc,
 }
+```
+
+-   Instale o es-lint e dê um start
+
+```
+npm i -D eslint
+npm init @eslint/config
+```
+
+-   Instale todos os pacotes de es-lint
+
+```
+eslint-config-airbnb-base
+eslint-config-google
+eslint-config-prettier
+eslint-import-resolver-typescript
+eslint-plugin-es
+eslint-plugin-filenames
+eslint-plugin-import
+eslint-plugin-max-params-no-constructor
+eslint-plugin-prettier
+eslint-plugin-tsdoc
 ```
