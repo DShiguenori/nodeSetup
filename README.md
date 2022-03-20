@@ -91,3 +91,20 @@ npm i -D ts-node-dev
   - baseUrl
 
   - typeRoots
+
+- Adicione o paths para determinar atalhos para importações.
+- Para ter compatibilidade com o ts-node-dev, instale o tsconfig-paths e atualize o script
+
+```
+npm i -D ts-node-dev
+```
+
+```
+{
+...etc,
+ "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+ ...etc,
+}
+```

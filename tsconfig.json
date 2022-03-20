@@ -13,10 +13,17 @@
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */    
     "resolveJsonModule": true,                        /* Enable importing .json files */
-    "baseUrl": ".",
     "typeRoots": [
       "./node_modules/@types",
       "./src/@types"
     ],                                    /* Specify multiple folders that act like `./node_modules/@types`. */
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": ["./src/logic/config/*"],
+      "@modules/*": ["./src/logic/modules/*"],
+      "@controllers/*": ["src/server/controllers/*"],
+      "@repository/*": ["src/server/repository/*"],
+      "@routes/*": ["./src/server/routes/*"],
+    }
   }
 }
