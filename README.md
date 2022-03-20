@@ -2,29 +2,24 @@
 
 ### Colinha para quando for criar novos projetos em node
 
-- Criar a pasta do projeto, e abrí-la
+- Cria a pasta do projeto. Abre a pasta nova. Chama o VsCode abrindo a pasta.
 
 ```
 mkdir nome
 cd nome
+code .
 ```
 
-- Inicializar o git
+- Inicializa o git
 
 ```
 git init
 ```
 
-- Inicializar o npm/yarn
+- Inicializa o npm/yarn
 
 ```
 npm init -y
-```
-
-- Abra a pasta no VsCode
-
-```
-code .
 ```
 
 - Instale o typescript e inicialize-o
@@ -65,18 +60,34 @@ npm i -D ts-node-dev
 }
 ```
 
-Continuar daqui
+- Atualizando o arquivo tsconfig.json
 
-https://youtu.be/rCeGfFk-uCk?t=517
+  - target
 
-```
+  - lib
 
-```
+  - experimentalDecorators
 
-Try to put a blank line before...
+  - emitDecoratorMetadata
 
-# Heading
+  - rootDir
 
-...and after a heading.
+  - allowJs
 
-...and after a heading.
+  - removeComments
+
+  - outDir
+
+  - esModuleInterop
+
+  - forceConsistentCasingInFileNames
+
+  - strict Diego coloca false, mas acredito que desligar isso perde muito da funcionalidade do typescript de segurar erros. É mais recomendado para devs avançados.
+
+  - skipLibCheck
+
+  - resolveJsonModule
+
+  - baseUrl
+
+  - typeRoots
