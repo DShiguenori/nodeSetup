@@ -21,6 +21,8 @@
     "paths": {
       "@config/*": ["./logic/config/*"],
       "@modules/*": ["./logic/modules/*"],
+      "@mocks/*": ["./logic/mocks/*"],
+
       "@controllers/*": ["./server/controllers/*"],
       "@repository/*": ["./server/repository/*"],
       "@routes/*": ["./server/routes/*"],

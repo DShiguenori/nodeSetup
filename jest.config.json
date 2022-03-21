@@ -1,0 +1,23 @@
+{
+	"preset": "ts-jest",
+	"roots": ["<rootDir>/src"],
+	"testEnvironment": "node",
+	"transform": {
+		"^.+\\.(t|j)sx?$": "ts-jest"
+	},
+	"testPathIgnorePatterns": [
+		"<rootDir>/dist/",
+		"<rootDir>/node_modules/"
+	],
+	"testRegex": "(/tests/.*)\\.(test.ts)$",
+	"collectCoverage": false,
+	"forceExit": false,
+	"detectOpenHandles": true,
+	"moduleDirectories": ["node_modules", "."],
+	"moduleNameMapper": {
+		"@config/(.*)": "<rootDir>/src/logic/config/$1",
+		"@modules/(.*)": "<rootDir>/src/logic/modules/$1",
+		"@mocks/(.*)": "<rootDir>/src/logic/mocks/$1"
+	}
+}
+  

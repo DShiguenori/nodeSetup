@@ -130,3 +130,10 @@ eslint-plugin-max-params-no-constructor
 eslint-plugin-prettier
 eslint-plugin-tsdoc
 ```
+
+-   Instale o jest
+
+```
+npm i -D jest
+npx jest --init
+```
