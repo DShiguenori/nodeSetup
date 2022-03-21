@@ -132,8 +132,21 @@ eslint-plugin-tsdoc
 ```
 
 -   Instale o jest
+-   Copie como está o jest.config.json desse projeto, copie também os scripts de test e testWatch
+-   na jest.config.json, lembre-se de configurar as importações que estamos fazendo via alias (propriedade moduleNameMapper)
 
 ```
 npm i -D jest
 npx jest --init
+```
+
+-   Instale o babel, que serve para fazer alguns ajustes no código JS que o typescript gera (como ajuste nas importações com @)
+-   Atualize o comando de build no script do package, para ele executar o babel
+
+```
+npm i -D @babel/cli
+@babel/node
+@babel/preset-env
+@babel/preset-typescript
+babel-plugin-module-resolver
 ```
