@@ -2,7 +2,11 @@
 
 ### Colinha para quando for criar novos projetos em node
 
--   Cria a pasta do projeto. Abre a pasta nova. Chama o VsCode abrindo a pasta.
+---
+
+-   Criar a pasta do projeto.
+    -   Abrir a pasta nova.
+    -   Chamar o VsCode abrindo a pasta.
 
 ```
 mkdir nome
@@ -10,39 +14,39 @@ cd nome
 code .
 ```
 
--   Inicializa o git
+-   Inicializar o git
 
 ```
 git init
 ```
 
--   Inicializa o npm/yarn
+-   Inicializar o npm/yarn
 
 ```
 npm init -y
 ```
 
--   Instale o typescript e inicialize-o
+-   Instalar o typescript e inicializar
 
 ```
 npm i typescript
 tsc --init
 ```
 
--   (opcional) Instale o express
+-   (opcional) Instalar o express
 
 ```
 npm i express
 npm i -D @types/express
 ```
 
--   Instale um "watcher" que re-executa o projeto quando acontecer uma modificação no código
+-   Instalar um "watcher" que re-executa o projeto quando acontecer uma modificação no código
 
 ```
 npm i -D ts-node-dev
 ```
 
--   Atualize o package com o script de inicialização
+-   Atualizar o package com o script de inicialização
 
     -- respawn Reinicia o projeto totalmente, não deixa processos vivos
 
@@ -60,7 +64,7 @@ npm i -D ts-node-dev
 }
 ```
 
--   Atualizando o arquivo tsconfig.json
+-   Atualizar o arquivo tsconfig.json
 
     -   target
 
@@ -92,8 +96,8 @@ npm i -D ts-node-dev
 
     -   typeRoots
 
--   Adicione o paths para determinar atalhos para importações.
--   Para ter compatibilidade com o ts-node-dev, instale o tsconfig-paths e atualize o script
+-   Adicionar o paths para determinar atalhos para importações.
+-   Para ter compatibilidade com o ts-node-dev, instalar o tsconfig-paths e atualize o script
 
 ```
 npm i -D ts-node-dev
@@ -109,14 +113,14 @@ npm i -D ts-node-dev
 }
 ```
 
--   Instale o es-lint e dê um start
+-   Instalar o es-lint e inicializar
 
 ```
 npm i -D eslint
 npm init @eslint/config
 ```
 
--   Instale todos os pacotes de es-lint
+-   Instalar todos os pacotes de es-lint
 
 ```
 eslint-config-airbnb-base
@@ -131,17 +135,18 @@ eslint-plugin-prettier
 eslint-plugin-tsdoc
 ```
 
--   Instale o jest
--   Copie como está o jest.config.json desse projeto, copie também os scripts de test e testWatch
--   na jest.config.json, lembre-se de configurar as importações que estamos fazendo via alias (propriedade moduleNameMapper)
+-   Instalar o jest
+    -   Copiar como está o jest.config.json desse projeto, copie também os scripts de test e testWatch
+    -   Lembre-se de configurar as importações que estamos fazendo via alias (propriedade moduleNameMapper) no jest.config.json
 
 ```
 npm i -D jest
 npx jest --init
 ```
 
--   Instale o babel, que serve para fazer alguns ajustes no código JS que o typescript gera (como ajuste nas importações com @)
--   Atualize o comando de build no script do package, para ele executar o babel
+-   Instalar o babel,
+    -   Usado para fazer alguns ajustes no código JS que o typescript gera (como ajuste nas importações com @)
+    -   Atualizar o comando de build no script do package, para ele executar o babel
 
 ```
 npm i -D @babel/cli
@@ -149,4 +154,16 @@ npm i -D @babel/cli
 @babel/preset-env
 @babel/preset-typescript
 babel-plugin-module-resolver
+```
+
+```
+"scripts": {
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts",
+    "lint": "eslint . --ext .ts --config .eslintrc.json",
+    "lintFix": "eslint . --ext .ts --config .eslintrc.json --fix",
+    "test": "jest --config jest.config.json",
+    "testWatch": "jest --config jest.config.json --passWithNoTests --no-cache --runInBand --watch"
+  },
 ```
